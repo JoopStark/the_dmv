@@ -14,30 +14,18 @@ describle.Registrant do
       expect(registrant_2.name).to eq("Penny")
       expect(registrant_2.age).to eq(15)
       expect(registrant_2.permit?).to be(false)
+    end
+
+    it "t2 can earn a permit" do
+      #permit defaults as false
+      registrant_1 = Registrant.new('Bruce', 18, true )
+      registrant_2 = Registrant.new('Penny', 15 )
+
+      expect(registrant_2.permit?).to be(false)
 
       registrant_2.earn_permit
 
       expect(registrant_2.permit?).to be(true)
     end
-
-
-
-
-
-
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
